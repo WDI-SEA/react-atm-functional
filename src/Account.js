@@ -2,15 +2,29 @@ import React, { useState } from 'react'
 
 const Account = props => {
     let [amount, setAmount] = useState(0)
+    let [amountW, setAmountW] = useState(0)
     let [balance, setBalance] = useState(0)
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount < 0) {
             console.log("Not a number")
         }
         else {
             setBalance(balance + Number(amount))
+        }
+        setAmount(0)
+    }
+
+    const handleWithdraw = e => {
+        e.preventDefault()
+        if (isNaN(amount) || amount < 0) {
+            console.log("Not a number")
+        }
+        else if (balance - Number(amount) < 0 ){
+            console.log("Too much Withdraw")
+        } else {
+            setBalance(balance - Number(amount))
         }
         setAmount(0)
     }
@@ -24,14 +38,15 @@ const Account = props => {
         <div className="account">
             <h2>{props.name}</h2>
             <div className={balanceClass}>${balance}</div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <input 
-                    type="text" 
+                    type="number" 
                     placeholder="enter an amount" 
                     value={amount} 
                     onChange={ e => setAmount(e.target.value) }
                 />
-                <input type="submit" value="Deposit" />
+                <input type="submit" value="Deposit" onClick={handleSubmit}/>
+                <input type="submit" value="Withdraw" onClick={handleWithdraw} />
             </form>
         </div>
     )
