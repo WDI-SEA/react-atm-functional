@@ -3,12 +3,20 @@ import React, { useState } from 'react'
 const Account = props => {
     let [amount, setAmount] = useState(0)
     let [balance, setBalance] = useState(0)
+    let [transaction, setTransaction] = useState(0)
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
-            console.log("Not a number")
-        }
+        console.log(transaction)
+        if ((isNaN(amount)) || (amount < 0)) {
+            alert("Not a valid deposit or withdrawal amount")
+        } else if (transaction == "Withdraw") {
+            if (amount > balance) {
+                alert("Insufficient funds!")
+            } else {
+                setBalance(balance - Number(amount))
+            }
+        }  
         else {
             setBalance(balance + Number(amount))
         }
@@ -31,7 +39,8 @@ const Account = props => {
                     value={amount} 
                     onChange={ e => setAmount(e.target.value) }
                 />
-                <input type="submit" value="Deposit" />
+                <input type="submit" value="Deposit" onClick={ e => setTransaction(e.target.value)} />
+                <input type="submit" value="Withdraw" onClick={ e => setTransaction(e.target.value)} />
             </form>
         </div>
     )
