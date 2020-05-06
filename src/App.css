@@ -5,11 +5,28 @@ body {
   font-family: 'Ruluko', sans-serif;
   margin: 0px auto;
   text-align: center;
-  width: 700px;
+  background-color: rgb(40, 75, 104);
 }
 
 .header {
   margin: 50px 0px;
+}
+
+#content {
+  padding: 0;
+}
+
+#nav {
+  background: url('http://www.jacquelynclark.com/wp-content/uploads/2017/08/LarkLinen-August-Mobile1.jpg');
+  background-size: cover;
+  margin: 0;
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+
+#logo img {
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0px 0px 10px black;
 }
 
 .title {
@@ -18,27 +35,69 @@ body {
   font-size: 50px;
 }
 
+.marble {
+  background: url('http://www.jacquelynclark.com/wp-content/uploads/2017/08/LarkLinen-August-Mobile1.jpg');
+  background-size: cover;
+  width: 500px;
+  margin: 40px auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px black;
+  padding: 20px 0;
+}
+
 .account {
-  background-color: #6C9A74;
-  border: 1px solid #295A33;
-  border-radius: 15px;
+  background-color: rgb(20, 39, 54);
+  box-shadow: 0px 0px 5px black;
+  border-radius: 5px;
   display: inline-block;
   margin: 10px;
-  padding: 10px;
-  width: 300px;
+  padding: 10px 20px;
+  width: 400px;
+  color: white;
 }
 
 .balance {
-  background-color: #E3E3E3;
-  border: 1px solid #676767;
-  border-radius: 15px;
+  background-color: rgb(54, 54, 54);
+  border: none;
+  border-radius: 5px;
   font-family: 'Ruluko', sans-serif;
   font-size: 50px;
-  margin: 5px;
-  padding: 25px 0px;
+  margin: 5px 0 20px 0;
+  padding: 15px 0px;
+  box-shadow: 0px 0px 5px black;
 }
 
 .zero {
-  background-color: #F52F4F;
+  background-color: rgb(204, 9, 42);
   color: #FFFFFF;
+}
+
+
+form {
+  text-align: left;
+  float: center;
+}
+
+form input {
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  box-shadow: 0px 0px 5px black;
+  margin: 5px;
+}
+
+.butt {
+  background-color: rgb(51, 93, 141);
+  color: white;
+  border-radius: 5px;
+  margin: 0 auto 0 10px;
+  border: none;
+  box-shadow: 0px 0px 5px black;
+  font-family: 'Ruluko', sans-serif;
+}
+
+.reserve {
+  margin: 10px auto;
+  width: 230px;
 }

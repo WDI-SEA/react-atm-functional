@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const Account = props => {
+
+const Savings = props => {
     let [amount, setAmount] = useState(0)
     let [balance, setBalance] = useState(0)
 
@@ -21,21 +22,10 @@ const Account = props => {
             console.log("Input must be a positive number")
         }
         else if (balance - Number(amount) < 0 ) {
-            alert('Account declined')
+            console.log('Account declined the request')
         }
         else {
             setBalance(balance - Number(amount))
-        }
-        setAmount(0)
-    }
-
-    const handleFed = e => {
-        e.preventDefault()
-        if (isNaN(amount) || amount < 0) {
-            console.log("Input must be a positive number")
-        }
-        else {
-            setBalance(balance + 1500000000000)
         }
         setAmount(0)
     }
@@ -60,7 +50,7 @@ const Account = props => {
                 />
                 <input className="butt" type="submit" value="Deposit" />
             </form>
-            <form onSubmit={handleWithdraw}>
+            <form  onSubmit={handleWithdraw}>
                 <input 
                     type="text" 
                     placeholder="enter an amount" 
@@ -69,20 +59,9 @@ const Account = props => {
                 />
                 <input className="butt" type="submit" value="Withdraw" />
             </form>
-            <div className="reserve">
-            <form onSubmit={handleFed}>
-                <input 
-                    type="hidden" 
-                    placeholder="enter an amount" 
-                    value={amount} 
-                    onChange={ e => setAmount(1000000000000) }
-                />
-                <label for="fed">For Bankers Only</label>
-                <input id="fed" className="butt" type="submit" value="Ask The Fed" />
-            </form>
-            </div>
+            
         </div>
     )
 }
 
-export default Account
+export default Savings
