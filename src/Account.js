@@ -20,6 +20,9 @@ const Account = props => {
         if (isNaN(amount || amount < 0)) {
             console.log("Not a number")
         }
+        else if (balance - Number(amount) < 0) {
+            console.log('Insufficient Funds')
+        }
         else {
             setBalance(balance - Number(amount))
         }
