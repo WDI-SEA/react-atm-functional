@@ -6,7 +6,7 @@ const Savings = props => {
 
 const handleDeposit = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount < 0) {
             console.log("Not a number")
         }
         else {
@@ -17,7 +17,7 @@ const handleDeposit = e => {
 
     const handleWithdraw = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount < 0) {
             console.log("Not a number")
         }
         else {
@@ -25,6 +25,12 @@ const handleDeposit = e => {
         }
         setAmount(0)
     }
+
+     let balanceClass = 'balance'
+    if (balance <= 0) {
+        balanceClass += ' zero'
+    }
+
 
   return (
     <div className='account'>

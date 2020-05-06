@@ -6,7 +6,7 @@ const Account = props => {
 
     const handleDeposit = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(amount) || amount < 0) {
             console.log("Not a number")
         }
         else {
@@ -17,7 +17,7 @@ const Account = props => {
 
     const handleWithdraw = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(amount || amount < 0)) {
             console.log("Not a number")
         }
         else {
