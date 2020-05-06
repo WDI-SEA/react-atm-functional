@@ -3,6 +3,7 @@ import React from 'react';
 
 // Custom Components
 import Account from './Account';
+import Savings from './Savings'
 
 // Resources
 import logo from './ga.png';
@@ -15,7 +16,7 @@ function App() {
         <div id="logo"><img src={logo} alt="General Assembly logo" /></div>
         <div id="title">Bank of GA</div>
       </div>
-      <Account name="Checking" />
+      <Account name="Checking" /><Savings name='Savings' />
       <div className="clear"></div>
     </div>
   );
