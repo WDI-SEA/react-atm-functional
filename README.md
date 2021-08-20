@@ -2,7 +2,7 @@
 
 --------
 
-Let's practice modifying an existing codebase. This repository contains the code for existing ATM application using React. In it, you can currently deposit money into a checking account.
+Let's practice modifying an existing codebase. This repository contains the code for an existing ATM application using React. In it, you can currently deposit money into a checking account.
 
 You'll be adding a few features to this:
 - The ability to withdraw money
@@ -39,7 +39,7 @@ Remember to make a pull request with your completed work in order to be given cr
 Currently, you can see that there is a Checking account where a user can deposit money. Try it out - it works!
 - Create a "Withdraw" button next to the "Deposit" button.
   - You should not be able to withdraw more than the current balance.
-- Create a Savings account - another component of the same class.
+- Create a Savings account - another component of the *same class*.
   - It will have the same deposit (and eventual withdraw) functionality.
 - You cannot type negative numbers in to either withdraw or deposit.
 

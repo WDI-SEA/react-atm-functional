@@ -1,40 +1,52 @@
-import React, { useState } from 'react'
+import { Component } from 'react'
 
-const Account = props => {
-    let [amount, setAmount] = useState(0)
-    let [balance, setBalance] = useState(0)
-
-    const handleSubmit = e => {
+class Account extends Component {
+    state = {
+        amount: 0,
+        balance: 0
+    }
+    
+    handleSubmit = e => {
         e.preventDefault()
-        if (isNaN(amount)) {
+        if (isNaN(this.state.amount)) {
             console.log("Not a number")
         }
         else {
-            setBalance(balance + Number(amount))
+            this.setState({
+                balance: this.state.balance + Number(this.state.amount)
+            })
         }
-        setAmount(0)
+        this.setAmount(0)
     }
 
-    let balanceClass = 'balance'
-    if (balance <= 0) {
-        balanceClass += ' zero'
+    setAmount = amount => {
+        this.setState({
+            amount: amount
+        })
     }
 
-    return (
-        <div className="account">
-            <h2>{props.name}</h2>
-            <div className={balanceClass}>${balance}</div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="enter an amount" 
-                    value={amount} 
-                    onChange={ e => setAmount(e.target.value) }
-                />
-                <input type="submit" value="Deposit" />
-            </form>
-        </div>
-    )
+    render () {
+        let balanceClass = 'balance'
+        if (this.state.balance <= 0) {
+            balanceClass += ' zero'
+        }
+
+        return (
+            <div className="account">
+                <h2>{this.props.name}</h2>
+                <div className={balanceClass}>${this.state.balance}</div>
+                <form onSubmit={this.handleSubmit}>
+                    <input 
+                        type="text" 
+                        placeholder="enter an amount" 
+                        value={this.state.amount} 
+                        onChange={ e => this.setAmount(e.target.value) }
+                    />
+                    <input type="submit" value="Deposit" />
+                </form>
+            </div>
+        )
+    }
 }
 
 export default Account
