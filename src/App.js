@@ -16,8 +16,10 @@ function App() {
         <div id="title">Bank of GA</div>
       </div>
       <Account name="Checking" />
+      <Account name="Savings" />
       <div className="clear"></div>
     </div>
+    
   );
 }
 
